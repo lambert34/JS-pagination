@@ -15,6 +15,14 @@ async function main() {
         const start = rowPerPage * page;
         const end = start + rowPerPage;
         const paginatedData = arrData.slice(start, end);
+
+        paginatedData.forEach((el) => {
+            const postEl = document.createElement("div");
+            postEl.classList.add("post");
+            postEl.innerText = `${el.title}`;
+            postsEl.appendChild(postEl);
+        })
+        
     }
     function displayPagination() {}
     function displayPaginationBtn() {}
