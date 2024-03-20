@@ -5,6 +5,9 @@ async function getData() {
 }
 
 async function main() {
+    const postData = await getData();
+    let currentPage = 1;
+    let rows = 10;
 
     function displayList() {}
     function displayPagination() {}
