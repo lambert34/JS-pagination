@@ -11,6 +11,8 @@ async function main() {
 
     function displayList(arrData, rowPerPage, page) {
         const postsEl = document.querySelector('.posts');
+        postEl.innerHTML = '';
+        page--;
 
         const start = rowPerPage * page;
         const end = start + rowPerPage;
@@ -31,13 +33,25 @@ async function main() {
         ulEl.classList.add("pagination__list");
 
         for (let i = 0; i < pagesCount; i++) {
-            const liEl = displayPaginationBtn();
+            const liEl = displayPaginationBtn(i + 1);
             ulEl.appendChild(liEl);
         }
+        paginationEl.appendChild(ulEl);
     }
-    function displayPaginationBtn() {}
+    function displayPaginationBtn() {
+        const liEl = document.createElement('li');
+        liEl.classList.add('pagination__item');
+        liEl.innerText = page;
+
+        liEl.addEventListener('click', () => {
+            currentPage = page;
+            displayList(postData, rows, currentPage);
+        })
+        return liEl;
+    }
 
     displayList(postData, rows, currentPage);
+    displayPagination(postData, rows);
 }
 
 main();
