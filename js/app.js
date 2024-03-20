@@ -22,11 +22,17 @@ async function main() {
             postEl.innerText = `${el.title}`;
             postsEl.appendChild(postEl);
         })
-        
+
     }
-    function displayPagination() {}
+    function displayPagination(arrData, rowPerPage) {
+        const paginationEl = document.querySelector('.pagination');
+        const pagesCount = Math.ceil(arrData.length / rowPerPage);
+        const ulEl = document.createElement("ul");
+        ulEl.classList.add("pagination__list");
+    }
     function displayPaginationBtn() {}
 
+    displayList(postData, rows, currentPage);
 }
 
 main();
