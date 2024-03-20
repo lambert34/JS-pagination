@@ -9,7 +9,13 @@ async function main() {
     let currentPage = 1;
     let rows = 10;
 
-    function displayList() {}
+    function displayList(arrData, rowPerPage, page) {
+        const postsEl = document.querySelector('.posts');
+
+        const start = rowPerPage * page;
+        const end = start + rowPerPage;
+        const paginatedData = arrData.slice(start, end);
+    }
     function displayPagination() {}
     function displayPaginationBtn() {}
 
