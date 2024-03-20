@@ -43,9 +43,14 @@ async function main() {
         liEl.classList.add('pagination__item');
         liEl.innerText = page;
 
+        if (currentPage == page) liEl.classList.add('pagination__item--active');
+
         liEl.addEventListener('click', () => {
             currentPage = page;
             displayList(postData, rows, currentPage);
+
+            const listItems = document.querySelectorAll('.pagination__item');
+            currentItemLi.classList.remuve('pagination__item--active');
         })
         return liEl;
     }

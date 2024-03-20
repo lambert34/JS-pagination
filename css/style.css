@@ -49,5 +49,5 @@ body {
 
 .pagination__item--active {
     font-weight: 800;
-    color: gold;
+    color: rgb(0, 153, 255);
 }
