@@ -29,6 +29,11 @@ async function main() {
         const pagesCount = Math.ceil(arrData.length / rowPerPage);
         const ulEl = document.createElement("ul");
         ulEl.classList.add("pagination__list");
+
+        for (let i = 0; i < pagesCount; i++) {
+            const liEl = displayPaginationBtn();
+            ulEl.appendChild(liEl);
+        }
     }
     function displayPaginationBtn() {}
 
