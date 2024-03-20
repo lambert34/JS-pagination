@@ -6,6 +6,10 @@ async function getData() {
 
 async function main() {
 
+    function displayList() {}
+    function displayPagination() {}
+    function displayPaginationBtn() {}
+
 }
 
 main();
